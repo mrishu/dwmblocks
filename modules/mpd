@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# -- NOTE -- : Add these lines to startup script to update statusbar on mpd events
+# (Replace x with signal number)
+# while true; do
+#     pkill -RTMIN+x dwmblocks
+#     mpc idle
+# done &
+
+. ~/src/dwmblocks/modules/modules-common
+
+MAX_SONG_LEN=35
+status=$(mpc status | sed -n '2p') current_song=$(mpc current -f '%title%' | cut -c 1-$MAX_SONG_LEN)
+case "$status" in
+    \[play*)    printf "$(color  green) $current_song";;
+    \[paused*)  printf "$(color  blue) $current_song";;
+    *)          printf "$(color  red) Stopped";;
+esac

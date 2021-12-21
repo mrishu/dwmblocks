@@ -1,0 +1,12 @@
+#!/bin/sh
+
+. ~/src/dwmblocks/modules/modules-common
+
+BAT_DIR="/sys/class/power_supply/BAT1"
+percent=$(cat "$BAT_DIR"/capacity)
+stat=$(cat "$BAT_DIR"/status)
+
+case "$stat" in
+    Charging|Full) printf "$(color  blue) %s" "$percent%" ;;
+    Discharging) printf "$(color  red) %s" "$percent%" ;;
+esac

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+. ~/src/dwmblocks/modules/modules-common
+printf "$(color  magenta) %s" "$(free -h | awk '/^Mem/ { print $3"/"$2 }' | sed s/i//g)"

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+. ~/src/dwmblocks/modules/modules-common
+
+if [ "$(pamixer --get-mute)" = "true" ]; then
+	printf "$(color  red) Mute"
+else
+	printf "$(color  red) $(pamixer --get-volume)"
+fi

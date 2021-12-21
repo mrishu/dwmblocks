@@ -1,0 +1,12 @@
+#!/bin/sh
+
+color() {
+	case $2 in
+		"red") printf "%s" "\x01${1}\x07";;
+		"green") printf "%s" "\x02${1}\x07";;
+		"yellow") printf "%s" "\x03${1}\x07";;
+		"blue") printf "%s" "\x04${1}\x07";;
+		"magenta") printf "%s" "\x05${1}\x07";;
+		"cyan") printf "%s" "\x06${1}\x07";;
+	esac
+}

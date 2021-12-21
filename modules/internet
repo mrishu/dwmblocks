@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Make a file zz-dwmblocks in /usr/lib/NetworkManager/dispatcher.d 
+# and paste the following lines in it for updating this module on network event.
+
+# #!/bin/sh
+# pkill -RTMIN+x dwmblocks
+
+# Replace 'x' with the signal number.
+
+. ~/src/dwmblocks/modules/modules-common
+
+network_id=$(/sbin/iwgetid -r)
+if [ -n "$network_id" ]
+then
+    printf "$(color  green) $network_id";
+else
+    printf "$(color  red) offline";
+fi
+

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+info=$(bluetoothctl info)
+
+if [ "$info" = "Missing device address argument" ]; then
+    printf "$(color  red)"
+else
+	name=$(printf "$info" | sed -n '/Name/{s_\s*Name: \(.*\)_\1_;p}')
+    printf "$(color  yellow) $name"
+fi
