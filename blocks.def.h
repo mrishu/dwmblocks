@@ -4,7 +4,7 @@
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
 	/* {"",              PATH("mpd"),                                                  0,      4}, */
-	{"",              PATH("internet"),                                              0,      3},
+	{" ",              PATH("internet"),                                              0,      3},
 	/* {"",              PATH("calcurse_block"),                                       5,      0}, */
 	/* {"",              PATH("bluetooth"),                                            5,      0}, */
 	{"",              PATH("battery"),                                              5,      0},
